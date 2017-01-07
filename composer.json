@@ -1,0 +1,16 @@
+{
+    "name": "drkthunder02/cvakoschecker",
+    "description": "Warped Intentions KOS Checker",
+    "authors": [
+        {
+            "name": "drkthunder02",
+            "email": "mancuso.christopher@gmail.com"
+        }
+    ],
+    "require": {
+        "simplon/mysql": "dev-master",
+        "illuminate/redis": "dev-master",
+        "twbs/bootstrap": "dev-master",
+        "phpunit": "php-timer"
+    }
+}
