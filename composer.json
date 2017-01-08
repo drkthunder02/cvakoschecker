@@ -9,7 +9,7 @@
     ],
     "require": {
         "simplon/mysql": "dev-master",
-        "illuminate/redis": "dev-master",
+        "predis/predis": "dev-master",
         "phpunit": "php-timer"
     }
 }

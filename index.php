@@ -15,3 +15,18 @@ and open the template in the editor.
         ?>
     </body>
 </html>
+
+<?php
+    //Load the registry to get files for classes and functions
+    require_once 'functions/registry.php';
+    //Start the session
+    $session = new Custom\Sessions\sessions();
+    
+    //Print out Navigation Bar
+    PrintNavBar();
+    
+    PrintTextAreaForm();
+    
+    
+
+?>

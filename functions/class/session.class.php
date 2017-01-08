@@ -3,6 +3,12 @@
 namespace Custom\Sessions;
 
 class sessions {
+    //Modify this section with the database parameters
+    private $host = 'localhost';
+    private $user = 'root';
+    private $password = 'P@55w0rd!';
+    private $table = 'koschecker';
+    
     //The database object in order to store the session data in a mysql database
     private $db;
     
@@ -25,9 +31,9 @@ class sessions {
         //Setup our db object
         $this->db = new \Simplon\Mysql\Mysql(
             'localhost',
-            'orebuyback',
+            'root',
             'P@55w0rd!',
-            'cmancuso_orebuyback'
+            'koschecker'
         );
         
         if($this->db) {
