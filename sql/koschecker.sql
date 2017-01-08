@@ -38,3 +38,38 @@ CREATE TABLE IF NOT EXISTS `Users` (
 
 INSERT INTO `users` (`id`, `username`, `password`) VALUES
 (1, 'admin', '21232f297a57a5a743894a0e4a801fc3');
+
+CREATE TABLE IF NOT EXISTS `Pilot` (
+    `id` int(20) NOT NULL AUTO_INCREMENT,
+    `Name` varchar(50) NOT NULL,
+    `Corp` varchar(50) NOT NULL,
+    `Alliance` varchar(50) DEFAULT NULL,
+    `KOS` tinyint(1),
+    PRIMARY KEY(`id`),
+    UNIQUE KEY `id` (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+CREATE TABLE IF NOT EXISTS `Corporation` (
+    `id` int(20) NOT NULL AUTO_INCREMENT,
+    `Name` varchar(50) NOT NULL,
+    `Alliance` varchar(50) NOT NULL,
+    `KOS` tinyint(1),
+    PRIMARY KEY(`id`),
+    UNIQUE KEY `id` (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+CREATE TABLE IF NOT EXISTS `Alliance` (
+    `id` int(20) NOT NULL AUTO_INCREMENT,
+    `Name` varchar(50) NOT NULL,
+    `KOS` tinyint(1),
+    PRIMARY KEY(`id`),
+    UNIQUE KEY `id` (`id`)    
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+CREATE TABLE IF NOT EXISTS `UpdateList` (
+    `id` int(20) NOT NULL AUTO_INCREMENT,
+    `Name` varchar(50) NOT NULL,
+    `lastUpdate` int(10) NOT NULL
+    PRIMARY KEY(`id`),
+    UNIQUE KEY `id` (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;

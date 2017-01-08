@@ -10,6 +10,6 @@
     "require": {
         "simplon/mysql": "dev-master",
         "predis/predis": "dev-master",
-        "phpunit": "php-timer"
+        "phpunit/php-timer": "dev-master"
     }
 }

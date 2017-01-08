@@ -16,6 +16,7 @@ function KOSChecks($names) {
     for($i = 0; $i < $size; $i++) {
         //Check each of $names for pilot in Redis
         $redisKey = $names[$i];
+        
     }
     
     //Results should be an array('pilot', 'corp', 'alliance', 'kos')

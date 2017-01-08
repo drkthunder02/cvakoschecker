@@ -1,5 +1,8 @@
 <?php
 
+//Autoloader
+require_once __DIR__.'/../vendor/autoload.php';
+
 //Classes
 require_once __DIR__.'/../functions/classes/login.class.php';
 require_once __DIR__.'/../functions/classes/session.class.php';
