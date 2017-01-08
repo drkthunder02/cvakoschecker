@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9b292c32f73f3ad397a895d87048be0d",
-    "content-hash": "43d23407bd20d5de43987f7b4036c33b",
+    "hash": "31a59ef3a618dcd8b2c8875d6f311abe",
+    "content-hash": "3593b7e9b1c7d9954a72623d67bc986b",
     "packages": [
         {
             "name": "phpunit/php-timer",
@@ -53,16 +53,16 @@
         },
         {
             "name": "predis/predis",
-            "version": "dev-master",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nrk/predis.git",
-                "reference": "3acf867cacd3cbb95a4d920e64416d4e6051560d"
+                "reference": "f0210e38881631afeafb56ab43405a92cafd9fd1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nrk/predis/zipball/3acf867cacd3cbb95a4d920e64416d4e6051560d",
-                "reference": "3acf867cacd3cbb95a4d920e64416d4e6051560d",
+                "url": "https://api.github.com/repos/nrk/predis/zipball/f0210e38881631afeafb56ab43405a92cafd9fd1",
+                "reference": "f0210e38881631afeafb56ab43405a92cafd9fd1",
                 "shasum": ""
             },
             "require": {
@@ -76,11 +76,6 @@
                 "ext-phpiredis": "Allows faster serialization and deserialization of the Redis protocol"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Predis\\": "src/"
@@ -104,7 +99,7 @@
                 "predis",
                 "redis"
             ],
-            "time": "2016-11-22 14:33:03"
+            "time": "2016-06-16 16:22:20"
         },
         {
             "name": "simplon/mysql",
@@ -157,7 +152,6 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "simplon/mysql": 20,
-        "predis/predis": 20,
         "phpunit/php-timer": 20
     },
     "prefer-stable": false,
