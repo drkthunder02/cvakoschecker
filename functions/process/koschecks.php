@@ -1,17 +1,17 @@
 <?php
 
 function KOSChecks($names) {
+    //Declare the redis server
+    $single_server = array(
+        'host' => '127.0.0.1',
+        'port' => 6379
+    );
+    
     //Size of the $names array
     $namesSize = sizeof($names);
     
-    //Declare the types of checks made
-    /*
-     * 'redis' = found and expired
-     * 'cva' = true or false
-     */
-    $checks = array();
     //Declare redis variable
-    $redis = new Redis();
+    $redis = new Predis\Client($single_server);
     $cvaList = "http://kos.cva-eve.org/api/?icon=32&max=100&c=json&q=";
     $cvaListEnd = "&offset=0&type=multi";
     
@@ -82,11 +82,17 @@ function KOSChecks($names) {
                 }
                 
                 //Add the entry into redis
-                $redis->hSet($names[$j]['label'], "pilot", $results[$j]['pilot']);
-                $redis->hSet($names[$j]['label'], "corp", $results[$j]['corp']);
-                $redis->hSet($names[$j]['label'], "alliance", $results[$j]['alliance']);
-                $redis->hSet($names[$j]['label'], "kos", $results[$j]['kos']);
+                $redis->hset($names[$j]['label'], "pilot", $results[$j]['pilot']);
+                $redis->hset($names[$j]['label'], "corp", $results[$j]['corp']);
+                $redis->hset($names[$j]['label'], "alliance", $results[$j]['alliance']);
+                $redis->hset($names[$j]['label'], "kos", $results[$j]['kos']);
                 $redis->expire($names[$j]['label'], "3600");
+                
+                $redis->executeRaw(array('HSET', $names[$j]['label'], 'pilot', $results[$j]['pilot']));
+                $redis->executeRaw(array('HSET', $names[$j]['label'], 'corp', $results[$j]['corp']));
+                $redis->executeRaw(array('HSET', $names[$j]['label'], 'alliance', $results[$j]['alliance']));
+                $redis->executeRaw(array('HSET', $names[$j]['label'], 'kos', $results[$j]['kos']));
+                $redis->executeRaw('TTL', $names[$j]['label'], '3600');
                 
                 //Open the database and store the items in the database as well
                 $db = DBOpen();
