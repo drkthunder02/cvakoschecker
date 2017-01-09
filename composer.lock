@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "31a59ef3a618dcd8b2c8875d6f311abe",
-    "content-hash": "3593b7e9b1c7d9954a72623d67bc986b",
+    "hash": "e62fdd59b4676398005d64c24038be4b",
+    "content-hash": "a4101ba37c83b8d3d9f073e3bb09bb1e",
     "packages": [
         {
             "name": "phpunit/php-timer",
-            "version": "dev-master",
+            "version": "1.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-timer.git",
-                "reference": "95a54002fb0317fc86efd42711b3971574939b6e"
+                "reference": "38e9124049cf1a164f1e4537caf19c99bf1eb260"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-timer/zipball/95a54002fb0317fc86efd42711b3971574939b6e",
-                "reference": "95a54002fb0317fc86efd42711b3971574939b6e",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-timer/zipball/38e9124049cf1a164f1e4537caf19c99bf1eb260",
+                "reference": "38e9124049cf1a164f1e4537caf19c99bf1eb260",
                 "shasum": ""
             },
             "require": {
@@ -49,7 +49,7 @@
             "keywords": [
                 "timer"
             ],
-            "time": "2016-10-03 07:43:50"
+            "time": "2016-05-12 18:03:57"
         },
         {
             "name": "predis/predis",
@@ -107,12 +107,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fightbulc/simplon_mysql.git",
-                "reference": "c60b96b829b882b8a4d0a631b85a98f489673cd8"
+                "reference": "1f80a07a2ffa00e44e8f6dee73dc7a7501dfd900"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fightbulc/simplon_mysql/zipball/c60b96b829b882b8a4d0a631b85a98f489673cd8",
-                "reference": "c60b96b829b882b8a4d0a631b85a98f489673cd8",
+                "url": "https://api.github.com/repos/fightbulc/simplon_mysql/zipball/1f80a07a2ffa00e44e8f6dee73dc7a7501dfd900",
+                "reference": "1f80a07a2ffa00e44e8f6dee73dc7a7501dfd900",
                 "shasum": ""
             },
             "require": {
@@ -144,15 +144,14 @@
                 "mysql",
                 "pdo"
             ],
-            "time": "2016-05-13 14:06:48"
+            "time": "2016-10-10 16:56:22"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "simplon/mysql": 20,
-        "phpunit/php-timer": 20
+        "simplon/mysql": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
