@@ -1,12 +1,7 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 /**
  * Author:  Christopher Mancuso
- * Created: Dec 23, 2016
- * Project: Eve Rental Payment Tracker
+ * Created: January 2017
+ * Project: W4RP KOS Checker
  */
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -39,37 +34,51 @@ CREATE TABLE IF NOT EXISTS `Users` (
 INSERT INTO `users` (`id`, `username`, `password`) VALUES
 (1, 'admin', '21232f297a57a5a743894a0e4a801fc3');
 
+--
+-- Table structure for Pilot entities
+--
+
 CREATE TABLE IF NOT EXISTS `Pilot` (
     `id` int(20) NOT NULL AUTO_INCREMENT,
-    `Name` varchar(50) NOT NULL,
-    `Corp` varchar(50) NOT NULL,
-    `Alliance` varchar(50) DEFAULT NULL,
-    `KOS` tinyint(1),
-    PRIMARY KEY(`id`),
-    UNIQUE KEY `id` (`id`)
+    `eveid` varchar(20) NOT NULL,
+    `label` varchar(255) NOT NULL,
+    `icon` varchar(255),
+    `kos` boolean,
+    `lastUpdate` int(20) NOT NULL,
+    PRIMARY KEY (`eveid`)
+    UNIQUE KEY `eveid` (`eveid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Table structure for Corporation entities
+--
 
 CREATE TABLE IF NOT EXISTS `Corporation` (
     `id` int(20) NOT NULL AUTO_INCREMENT,
-    `Name` varchar(50) NOT NULL,
-    `Alliance` varchar(50) NOT NULL,
-    `KOS` tinyint(1),
-    PRIMARY KEY(`id`),
-    UNIQUE KEY `id` (`id`)
+    `eveid` varchar(20) NOT NULL,
+    `label` varchar(255) NOT NULL,
+    `icon` varchar(255),
+    `kos` boolean,
+    `ticker` varchar(6) NOT NULL,
+    `npc` boolean,
+    `lastUpdate` int(20) NOT NULL,
+    PRIMARY KEY (`eveid`),
+    UNIQUE KEY `eveid` (`eveid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
-CREATE TABLE IF NOT EXISTS `Alliance` (
+--
+-- Table structure for Alliance entities
+--
+
+CREATE TABLE IF NOT EXISTS `Alliance` ( 
     `id` int(20) NOT NULL AUTO_INCREMENT,
-    `Name` varchar(50) NOT NULL,
-    `KOS` tinyint(1),
-    PRIMARY KEY(`id`),
-    UNIQUE KEY `id` (`id`)    
+    `eveid` varchar(20) NOT NULL,
+    `label` varchar(255) NOT NULL,
+    `icon` varchar(255),
+    `kos` boolean,
+    `ticker` varchar(6) NOT NULL,
+    `lastUpdate` int(20) NOT NULL,
+    PRIMARY KEY (`eveid`),
+    UNIQUE KEY `eveid` (`eveid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
-CREATE TABLE IF NOT EXISTS `UpdateList` (
-    `id` int(20) NOT NULL AUTO_INCREMENT,
-    `Name` varchar(50) NOT NULL,
-    `lastUpdate` int(10) NOT NULL
-    PRIMARY KEY(`id`),
-    UNIQUE KEY `id` (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
