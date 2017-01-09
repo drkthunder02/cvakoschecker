@@ -20,6 +20,7 @@ function KOSChecks($names) {
         //Check each of $names for pilot in Redis
         $redisKey = $names[$i];
         $redisData = $redis->hGetAll($redisKey);
+        $redisData = $redis->hgetall($redisKey);
         if($tempData == NIL) {
             $results[$i]['label'] = $names[$i];
             $cvaList = AddToCVAList($names[$i], $cvaList);
